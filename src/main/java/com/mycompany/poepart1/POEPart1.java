@@ -13,7 +13,6 @@ public class POEPart1 {
 
     public static void main(String[] args) {
         //Login Instance
-        Registration check = new Registration();
         Login check_all = new Login();
         
         //Object for a Scanner
