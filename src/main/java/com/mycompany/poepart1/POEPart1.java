@@ -25,8 +25,14 @@ public class POEPart1 {
         String name;
         String surname;
         
-        
-        
-        
+       //Prompt user for username, password, name and surname
+       System.out.println("Enter Username: ");
+       username = input.next();
+       System.out.println("Enter Password: ");
+       password = input.next();
+       System.out.println("Enter First Name: ");
+       name = input.next();
+       System.out.println("Enter Last Name: ");
+       surname = input.next();
     }
 }
