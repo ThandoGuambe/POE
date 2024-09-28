@@ -11,39 +11,54 @@ import java.util.regex.Pattern;
  */
 class Login {
     public boolean checkUsername(String username) {
-        //Temporary variable for checking
-        boolean Found = false;
+        //Declare temporary variable for checking
+        boolean UserFound = false;
         //Check username
-        if (username.contains("_") && username.length() <5){
-            Found = true;
+        if (username.contains("_") && username.length() <=5){
+        //Assign temporary variable for checking
+            UserFound = true;
             //Message
-            System.out.println("Username is successfully captured");
+            System.out.println("Username is successfully captured.");
         }else{
-            Found= false;
+        //Re-assign temporary variable for checking
+            UserFound = false;
             System.out.println("Username is not formatted, please ensure that "
                     + "your usernamecontains an underscore and is no more "
                     + "than 5 characters in length.");
         }
-        return Found;
+        return username.contains("_") && username.length() <=5;
     }
-    public boolean checkPassword(String password){
+    public boolean checkPasswordComplexity(String password){
         
         //Check password
         Pattern check_num = Pattern.compile("[0123456789]");
         Pattern check_specials = Pattern.compile("[!@#$%^&*+-_:.<,>~']");
         Pattern check_Uppercase = Pattern.compile("[QWERTYUIOPLKJHGFDSAZXCVBNM]");
         
-        boolean Found = false;
+        boolean PasswordFound = false;
         //Check all
         if(check_num.matcher(password).find() && check_specials.matcher(password).find() && check_Uppercase.matcher(password).find()){
-            Found =true;
-            //Message
-            System.out.println("Password successfully captured");
+            PasswordFound =true;
+            //message
+            System.out.println("Password is successfully captured.");
         }else{
-            System.out.println("Password is not correctly formatted, please "
-                    + "ensure that the password containsat least 8 characters,"
-                    + "a capital letter, a number and a special character.");
+            PasswordFound =false;
+            System.out.println("Password is not formatted, please ensure that "
+                    + "the password contains at least 8 characters, a capital letter "
+                    + "a number and a special character.");
         }
-        return Found;
+        return check_num.matcher(password).find() && check_specials.matcher(password).find() && check_Uppercase.matcher(password).find();
+    } 
+    public String registerUser(String username,String password, String name, String surname) {
+        //check if username is valid
+        if(!checkUsername(username)){
+            return "The username is not correctly formatted";
+        }
+        if(!checkPasswordComplexity(password)){
+            return "The password does not meet the complexity requirements.";
+        }else{
+            return "User succesfully registered.";
+        }
+        
     } 
 }

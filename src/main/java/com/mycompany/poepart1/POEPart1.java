@@ -13,7 +13,7 @@ public class POEPart1 {
 
     public static void main(String[] args) {
         //Login Instance
-        Login check_all = new Login();
+        Login register_login = new Login();
         
         //Object for a Scanner
         Scanner input = new Scanner(System.in);
@@ -25,13 +25,29 @@ public class POEPart1 {
         String surname;
         
        //Prompt user for username, password, name and surname
+       System.out.println("Register Account");
+       System.out.println("______________________");
+       
        System.out.println("Enter Username: ");
        username = input.next();
+       register_login.checkUsername(username);
+       
        System.out.println("Enter Password: ");
        password = input.next();
+       register_login.checkPasswordComplexity(password);
+       
        System.out.println("Enter First Name: ");
        name = input.next();
        System.out.println("Enter Last Name: ");
        surname = input.next();
+       
+       
+       
+       register_login.registerUser(username, password, name, surname);
+      
+      
+      
+      
+       
     }
 }
