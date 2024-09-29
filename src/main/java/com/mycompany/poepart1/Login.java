@@ -4,35 +4,73 @@
  */
 package com.mycompany.poepart1;
 import java.util.regex.Pattern;
+import java.util.regex.*;
 
 /**
  *
  * @author RC_Student_lab
  */
 class Login {
-    private POEPart1 registeredUser;
+    //Declaration
+    private String username;
+    private String password;
+    private String name;
+    private String surname;
     
-    public boolean checkUsername(String username) {
-        return username.contains("_") && username.length() <=5;
-        }
-
-    public boolean checkPasswordComplexity(String password){
-     //Check password
-     String pattern = "[A-Z][0-9][!@#$%^&*+-_:.<,>~']";
-     return password.matches(pattern);
+    //Constructor
+    public Login(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
-                 
-    public String registerUser(String username,String password, String name, String surname) {
+    //Checking username validity
+    public boolean checkUsername(String username) {
+        if(username.contains("_") && username.length() <=5){
+        return true;
+        }else{
+            return false;
+        }
+    }
+    //Checking password complexity
+    public boolean checkPasswordComplexity(String password){
+     //Pattern regex
+     Pattern check_num = Pattern.compile("[0123456789]");
+     Pattern check_specials = Pattern.compile("[QWERTYUIOPLKJHGFDSAZXCVBNM]");
+     Pattern check_uppercase = Pattern.compile("[!@#$%^&*+-_:.<,>~']");
+     
+     //Check all 
+     if(check_num.matcher(password).find() && check_specials.matcher(password).find() && check_uppercase.matcher(password).find()){
+         return true;
+     }else{
+         return false;
+     }
+    }
+    //Register the user
+    public String registerUser(String username,String password) {
         //check if username is valid
         if(!checkUsername(username)){
-            return "The username is not correctly formatted";
+            return "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
         }
         if(!checkPasswordComplexity(password)){
-            return "The password does not meet the complexity requirements.";
+            return "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number and a special character.";
         }
-          registeredUser = new POEPart1();
-            return "Username successfully captured.\nPassword successfully captured.";
+        // If both conditions are satisfied, store the username and password
+        this.username = username;
+        this.password = password;
+        return "User registered successfully!";
         }
-        
-    } 
+        // Verify login details
+        public Boolean loginUser(String username, String password) {
+        // Check if the entered username and password match the stored ones
+        return this.username.equals(username) && this.password.equals(password);
+        }
+        //Return login status
+        public String returnLoginStatus(String username, String password) {
+        if (loginUser(username, password)) {
+            return "Welcome " + name + " " + surname + ", it is great to see you again.";
+        } else {
+            return "Username or password incorrect, please try again.";
+        }
+    }
+}      
+   
 

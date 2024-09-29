@@ -12,9 +12,7 @@ import java.util.*;
 public class POEPart1 {
 
     public static void main(String[] args) {
-        //Login Instance
-        Login register_login = new Login();
-        
+          
         //Object for a Scanner
         Scanner input = new Scanner(System.in);
         
@@ -24,30 +22,47 @@ public class POEPart1 {
         String name;
         String surname;
         
-       //Prompt user for username, password, name and surname
-       System.out.println("Register Account");
-       System.out.println("______________________");
-       
-       System.out.println("Enter Username: ");
-       username = input.next();
-       register_login.checkUsername(username);
-       
-       System.out.println("Enter Password: ");
-       password = input.next();
-       register_login.checkPasswordComplexity(password);
+        String loginUsername;
+        String loginPassword;
+        
+       //Prompt user name and surname
        
        System.out.println("Enter First Name: ");
        name = input.next();
        System.out.println("Enter Last Name: ");
        surname = input.next();
        
+       //Login Instance
+       Login register_login = new Login(name, surname); 
        
+       System.out.println("______________________");
+       //User registration
+       System.out.println("Register Account");
        
-       register_login.registerUser(username, password, name, surname);
-      
-      
-      
-      
+       System.out.println("Enter Username: ");
+       username = input.next();
        
+       System.out.println("Enter Password: ");
+       password = input.next();
+       
+       //Register user 
+       String registrationStatus = register_login.registerUser(username, password);
+       System.out.println(registrationStatus);
+       System.out.println("______________________");
+       
+       //If registration is successful, proceed to login
+       if (registrationStatus.equals("User registered successfully!")) {
+            // If registration is successful, proceed to login
+            System.out.println("Login to your account:");
+            System.out.println("Enter username: ");
+            loginUsername = input.next();
+
+            System.out.println("Enter password: ");
+            loginPassword = input.next();
+
+            // Display login status message
+            String loginStatus = register_login.returnLoginStatus(loginUsername, loginPassword);
+            System.out.println(loginStatus);
+        }
     }
 }
