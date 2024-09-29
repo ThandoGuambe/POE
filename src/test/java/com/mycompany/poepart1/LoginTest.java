@@ -41,18 +41,27 @@ public class LoginTest {
     /**
      * Test of checkPasswordComplexity method, of class Login.
      */
+    
+    //Test valid Password
     @Test
-    public void testCheckPasswordComplexity() {
+    public void testValidPassword() {
         System.out.println("checkPasswordComplexity");
-        String password = "";
+        String password = "Ch&&sec@ke99!";
+        Login instance = new Login();
+        boolean expResult = true;
+        boolean result = instance.checkPasswordComplexity(password);
+        assertEquals(expResult, result);
+    }
+//Test Invalid Password
+    @Test
+    public void testInvalidPassword() {
+        System.out.println("checkPasswordComplexity");
+        String password = "password";
         Login instance = new Login();
         boolean expResult = false;
         boolean result = instance.checkPasswordComplexity(password);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
     /**
      * Test of registerUser method, of class Login.
      */
