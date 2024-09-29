@@ -12,9 +12,12 @@ import java.util.*;
 public class POEPart1 {
 
     public static void main(String[] args) {
-          
+              
         //Object for a Scanner
         Scanner input = new Scanner(System.in);
+        
+       //Instance of a login class
+       Login loginSystem = new Login();
         
         //Declarations
         String username;
@@ -32,26 +35,23 @@ public class POEPart1 {
        System.out.println("Enter Last Name: ");
        surname = input.next();
        
-       //Login Instance
-       Login register_login = new Login(name, surname); 
-       
        System.out.println("______________________");
        //User registration
        System.out.println("Register Account");
        
        System.out.println("Enter Username: ");
        username = input.next();
-       
        System.out.println("Enter Password: ");
        password = input.next();
        
-       //Register user 
-       String registrationStatus = register_login.registerUser(username, password);
-       System.out.println(registrationStatus);
+       //Register user
+       String registration = loginSystem.registerUser(username, password, name, surname);
+       System.out.println(registration);
+       
        System.out.println("______________________");
        
        //If registration is successful, proceed to login
-       if (registrationStatus.equals("User registered successfully!")) {
+       if (registration.equals("User registered successfully!")) {
             // If registration is successful, proceed to login
             System.out.println("Login to your account:");
             System.out.println("Enter username: ");
@@ -61,7 +61,7 @@ public class POEPart1 {
             loginPassword = input.next();
 
             // Display login status message
-            String loginStatus = register_login.returnLoginStatus(loginUsername, loginPassword);
+            String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword);
             System.out.println(loginStatus);
         }
     }
