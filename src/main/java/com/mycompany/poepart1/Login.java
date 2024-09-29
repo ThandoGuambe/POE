@@ -36,12 +36,12 @@ class Login {
     public boolean checkPasswordComplexity(String password){
      //Pattern regex
      Pattern check_num = Pattern.compile("[0123456789]");
-     Pattern check_specials = Pattern.compile("[QWERTYUIOPLKJHGFDSAZXCVBNM]");
-     Pattern check_uppercase = Pattern.compile("[!@#$%^&*+-_:.<,>~']");
+     Pattern check_uppercase = Pattern.compile("[QWERTYUIOPLKJHGFDSAZXCVBNM]");
+     Pattern check_specials = Pattern.compile("[!@#$%^&*+-_:.<,>~']");
      
      boolean Found = false;
      //Check all 
-     if(check_num.matcher(password).find() && check_specials.matcher(password).find() && check_uppercase.matcher(password).find()){
+     if(check_num.matcher(password).find() && (check_specials.matcher(password).find()) && (check_uppercase.matcher(password).find())){
          Found = true;
          System.out.println("Password successfully captured.");
          return true;
@@ -66,8 +66,8 @@ class Login {
             this.username = username;
             this.password = password;
             return "User registered successfully!";
-        }   
-    }
+        }  
+     }
         // Verify login details
         public Boolean loginUser(String username, String password) {
         // Check if the entered username and password match the stored ones

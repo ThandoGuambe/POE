@@ -41,6 +41,7 @@ public class POEPart1 {
        
        System.out.println("Enter Username: ");
        username = input.next();
+       
        System.out.println("Enter Password: ");
        password = input.next();
        
@@ -48,11 +49,10 @@ public class POEPart1 {
        String registration = loginSystem.registerUser(username, password, name, surname);
        System.out.println(registration);
        
-       System.out.println("______________________");
-       
        //If registration is successful, proceed to login
        if (registration.equals("User registered successfully!")) {
             // If registration is successful, proceed to login
+            System.out.println("______________________");
             System.out.println("Login to your account:");
             System.out.println("Enter username: ");
             loginUsername = input.next();
@@ -63,6 +63,9 @@ public class POEPart1 {
             // Display login status message
             String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword);
             System.out.println(loginStatus);
-        }
+        }else{
+           input.close();
+           System.out.println("__________________END______________________");
+       }
     }
 }
