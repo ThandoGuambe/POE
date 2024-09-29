@@ -19,11 +19,21 @@ public class LoginTest {
      */
     //Test valid username
     @Test
-    public void testCheckUsername() {
+    public void testvalidUsername() {
         System.out.println("checkUsername");
         String username = "kyl_1";
         Login instance = new Login();
         boolean expResult = true;
+        boolean result = instance.checkUsername(username);
+        assertEquals(expResult, result);
+    }
+    //Test invalid username
+    @Test
+    public void testInvalidUsername() {
+        System.out.println("checkUsername");
+        String username = "kyle!!!!!!!";
+        Login instance = new Login();
+        boolean expResult = false;
         boolean result = instance.checkUsername(username);
         assertEquals(expResult, result);
     }
