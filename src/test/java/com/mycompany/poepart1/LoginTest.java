@@ -84,6 +84,21 @@ public class LoginTest {
         String result = instance.registerUser("user_", "password", "Kyle", "Newport");
         assertEquals("Password is not correctly formatted.", result);
     }
+    //Test user registration: valid username and password
+    @Test
+    public void testRegisterUser_ValidUsernameAndPassword() {
+        System.out.println("registerUser");
+        Login instance = new Login();
+        String result = instance.registerUser("user_", "Password1!", "Kyle", "Newport");
+        assertEquals("User registered successfully!", result);
+    }
+    /*
+     * Test of LoginUser method, of class Login.
+     */
+   @Test
+    public void testLoginUser() {
+        
+    }
     /*
      * Test of LoginStatus method, of class Login.
      */
