@@ -91,27 +91,21 @@ public class LoginTest {
         Login instance = new Login();
         String result = instance.registerUser("user_", "Password1!", "Kyle", "Newport");
         assertEquals("User registered successfully!", result);
-    }
-    /*
-     * Test of LoginUser method, of class Login.
-     */
-   @Test
-    public void testLoginUser() {
-        
-    }
+    }  
     /*
      * Test of LoginStatus method, of class Login.
      */
+    //Test valid login status
     @Test
-    public void testLoginStatus() {
+    public void testSuccessLoginStatus() {
         System.out.println("LoginStatus");
-        String name = "Kyle";
-        String username = "kyl_1";
-        String password = "Password1!";
-        String surname = "Newport";
         Login instance = new Login();
+        String username = "user_";
+        String password = "Password1!";
+        String name = "Kyle";
+        String surname = "Newport";
         String expResult = "Welcome " + name + " " + surname + ", it is great to see you again.";
-        String result = instance.LoginStatus(username, password);
+        String result = instance.LoginStatus(username, password, name, surname);
         assertEquals(expResult, result);
     }
 }

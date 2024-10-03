@@ -74,7 +74,8 @@ class Login {
         return this.username.equals(username) && this.password.equals(password);
         }
         //Return login status
-        public String LoginStatus(String username, String password) {
+        //Run JAVA JUnit Test of the following JAVA Code;
+        public String LoginStatus(String username, String password, String name, String surname) {
         if (loginUser(username, password)) {
             return "Welcome " + name + " " + surname + ", it is great to see you again.";
         } else {

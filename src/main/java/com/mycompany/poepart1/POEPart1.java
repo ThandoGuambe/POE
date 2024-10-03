@@ -61,7 +61,7 @@ public class POEPart1 {
             loginPassword = input.next();
 
             // Display login status message
-            String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword);
+            String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword, name, surname);
             System.out.println(loginStatus);
         }else{
            input.close();
