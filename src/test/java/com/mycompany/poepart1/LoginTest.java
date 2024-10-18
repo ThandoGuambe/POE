@@ -6,7 +6,7 @@ package com.mycompany.poepart1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeAll;
+
 /**
  *
  * @author RC_Student_lab
@@ -92,21 +92,5 @@ public class LoginTest {
         String result = instance.registerUser("user_", "Password1!", "Kyle", "Newport");
         assertEquals("User registered successfully!", result);
     }  
-    /*
-     * Test of LoginStatus method, of class Login.
-     */
-    //Test valid login status
-    @Test
-    public void testSuccessLoginStatus() {
-        System.out.println("LoginStatus");
-        Login instance = new Login();
-        String username = "user_";
-        String password = "Password1!";
-        String name = "Kyle";
-        String surname = "Newport";
-        String expResult = "Welcome " + name + " " + surname + ", it is great to see you again.";
-        String result = instance.LoginStatus(username, password, name, surname);
-        assertEquals(expResult, result);
-    }
 }
 

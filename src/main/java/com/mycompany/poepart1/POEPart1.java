@@ -18,6 +18,9 @@ public class POEPart1 {
         
        //Instance of a login class
        Login loginSystem = new Login();
+       
+       //Instance of a Task Class
+       Task tasksystem = new Task();
         
         //Declarations
         String username;
