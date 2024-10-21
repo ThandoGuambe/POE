@@ -65,71 +65,11 @@ public class POEPart1 {
             String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword, name, surname);
             System.out.println(loginStatus);
             
-        //Display welcome message
-        if (loginStatus.equals("Welcome " + name + " " + surname + ", it is great to see you again.")){
-            System.out.println("Welcome to EasyKanban");
-            
-            boolean running = true;
-            while(running){
-                System.out.println("_________________________________________________");
-                System.out.println("Choose an option:");
-                System.out.println("1) Add tasks");
-                System.out.println("2) Show report");
-                System.out.println("3) Quit");
-                
-                int option = input.nextInt();
-                
-                switch (option){
-                    case 1:
-                        //Task Creation
-                        int numTasks;
-                        System.out.println("How many tasks would you like to add?");
-                        numTasks = input.nextInt();
-                        for(int i = 0; i < numTasks;i++){
-                            String taskName;
-                            System.out.println("Enter task name");
-                            taskName = input.next();
-                            
-                            String description;
-                            System.out.println("Enter task description (max of 50 characters:");
-                            description = input.next();
-                            
-                            String developerName;
-                            System.out.println("Enter developer details (First and Last Name):");
-                            developerName = input.nextLine();
-                            
-                            int duration;
-                            System.out.println("Enter task duration (in hours):");
-                            duration = input.nextInt();
-                            
-                            System.out.println("Choose task status (1: To Do, 2: Doing, 3: Done):");
-                            
-                            int statusChoice = input.nextInt();
-                            String taskStatus = switch (statusChoice){
-                                case 1 -> "To Do";
-                                case 2 -> "Doing";
-                                case 3 -> "Done";
-                                default -> "Unknown";
-                            };
-                            
-                            Task task = new Task(taskName, description, i, developerName, duration, taskStatus);
-                            if(task.checkTaskDescription()){
-                                JOptionPane.showMessageDialog(null,task.printTaskDetails());
-                            }
-                        }
-                        break;
-                    case 2:
-                        //Show report - currently in 
-                        
-                }
-            }
-            
-            
-              
+        
         } else {
            input.close();
            System.out.println("__________________END______________________");
             }
         }
-    }
 }
+
