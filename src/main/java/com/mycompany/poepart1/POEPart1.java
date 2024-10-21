@@ -112,27 +112,13 @@ public class POEPart1 {
                                 default -> "Unknown";
                             };
                             
-                             Task task = new Task();
-                            if(task.checkTaskDescription()){
-                                JOptionPane.showMessageDialog(null,task.printTaskDetails());
-                            }
-                        }
-                        break;
-                    case 2:
-                        //Show report - currently in development
-                        JOptionPane.showMessageDialog(null, "Coming Soon");
-                        break;
-                    case 3:
-                        //Quit Application
-                        JOptionPane.showMessageDialog(null, "Total hours across all tasks: " + Task.returnTotalHours());
-                        running = false;
-                    default:
-                        JOptionPane.showMessageDialog(null,"Invalid Option. Try Again.");
-                }
-            }  
+                        }            
+                    }
+                }         
         }else{
            input.close();
            System.out.println("__________________END______________________");
-       }
+            }
+        }
     }
 }
