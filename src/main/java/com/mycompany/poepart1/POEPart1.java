@@ -76,6 +76,42 @@ public class POEPart1 {
                 System.out.println("2) Show report");
                 System.out.println("3) Quit");
 
+                int option = input.nextInt();
+                
+                switch (option){
+                    case 1:
+                        //Task Creation
+                        int numTasks;
+                        System.out.println("How many tasks would you like to add?");
+                        numTasks = input.nextInt();
+                        for(int i = 0; i < numTasks;i++){
+                            String taskName;
+                            System.out.println("Enter task name");
+                            taskName = input.next();
+                            
+                            String description;
+                            System.out.println("Enter task description (max of 50 characters:");
+                            description = input.next();
+                            
+                            String developerName;
+                            System.out.println("Enter developer details (First and Last Name):");
+                            developerName = input.nextLine();
+                            
+                            int duration;
+                            System.out.println("Enter task duration (in hours):");
+                            duration = input.nextInt();
+                            
+                            System.out.println("Choose task status (1: To Do, 2: Doing, 3: Done):");
+                            
+                            int statusChoice = input.nextInt();
+                            String taskStatus = switch (statusChoice){
+                                case 1 -> "To Do";
+                                case 2 -> "Doing";
+                                case 3 -> "Done";
+                                default -> "Unknown";
+                            };
+                            
+
             
             
         }else{
