@@ -4,6 +4,7 @@
 
 package com.mycompany.poepart1;
 import java.util.*;
+import javax.swing.*;
 
 /**
  *
@@ -111,9 +112,17 @@ public class POEPart1 {
                                 default -> "Unknown";
                             };
                             
-
-            
-            
+                             Task task = new Task();
+                            if(task.checkTaskDescription()){
+                                JOptionPane.showMessageDialog(null,task.printTaskDetails());
+                            }
+                        }
+                        break;
+                    case 2:
+                        //Show report - currently in 
+                        
+                }
+            }  
         }else{
            input.close();
            System.out.println("__________________END______________________");
