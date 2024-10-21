@@ -119,7 +119,12 @@ public class POEPart1 {
                         }
                         break;
                     case 2:
-                        //Show report - currently in 
+                        //Show report - currently in development
+                        JOptionPane.showMessageDialog(null, "Coming Soon");
+                        break;
+                    case 3:
+                        
+                        
                         
                 }
             }  
