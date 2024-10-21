@@ -10,16 +10,25 @@ package com.mycompany.poepart1;
  */
 class Task {
     //Declarations
-     private String taskName;
+    private String taskName;
     private String description;
     private String developerName;
-    private int taskNumb;
+    private int taskNum;
     private String taskID;
     private int duration;
     private String taskStatus;
     private static int totalHrs = 0;
     
     //Adding a constructor
+    public Task(String taskName, String taskDescription, String developerDetails, int taskNumber, int taskDuration, String taskStatus) {
+        this.taskName = taskName;
+        this.description = taskDescription;
+        this.developerName = developerDetails;
+        this.taskNum = taskNumber;
+        this.duration = taskDuration;
+        this.taskStatus = taskStatus;
+        this.taskID = createTaskID();
+        totalHrs += taskDuration;
     
     
 }
