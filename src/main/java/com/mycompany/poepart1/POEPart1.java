@@ -119,7 +119,16 @@ public class POEPart1 {
                         }
                         break;
                     case 2:
-                        
+                        // Show report - currently in development
+                        JOptionPane.showMessageDialog(null, "Coming Soon");
+                        break;
+                    case 3:
+                        // Quit Application
+                        JOptionPane.showMessageDialog(null, "Total hours across all tasks: " + Task.returnTotalHours());
+                        running = false;
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Invalid option. Try again.");
                     }
                 }         
         }else{
