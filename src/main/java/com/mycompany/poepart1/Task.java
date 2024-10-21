@@ -9,7 +9,17 @@ package com.mycompany.poepart1;
  * @author RC_Student_lab
  */
 class Task {
-
+    //Declarations
+     private String taskName;
+    private String description;
+    private String developerName;
+    private int taskNumb;
+    private String taskID;
+    private int duration;
+    private String taskStatus;
+    private static int totalHrs = 0;
+    
+    //Adding a constructor
     
     
 }
