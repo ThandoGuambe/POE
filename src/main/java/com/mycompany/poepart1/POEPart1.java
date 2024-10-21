@@ -63,6 +63,21 @@ public class POEPart1 {
             // Display login status message
             String loginStatus = loginSystem.LoginStatus(loginUsername, loginPassword, name, surname);
             System.out.println(loginStatus);
+            
+            //Display welcome message
+        if (loginStatus.equals("Welcome " + name + " " + surname + ", it is great to see you again.")){
+            System.out.println("Welcome to EasyKanban");
+            
+            boolean running = true;
+            while(running){
+                System.out.println("_________________________________________________");
+                System.out.println("Choose an option:");
+                System.out.println("1) Add tasks");
+                System.out.println("2) Show report");
+                System.out.println("3) Quit");
+
+            
+            
         }else{
            input.close();
            System.out.println("__________________END______________________");
