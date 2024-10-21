@@ -4,7 +4,7 @@
 
 package com.mycompany.poepart1;
 import java.util.*;
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,7 +12,7 @@ import javax.swing.*;
  */
 public class POEPart1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args, String developerDetails) {
               
         //Object for a Scanner
         Scanner input = new Scanner(System.in);
@@ -111,8 +111,15 @@ public class POEPart1 {
                                 case 3 -> "Done";
                                 default -> "Unknown";
                             };
-                            
-                        }            
+                            //Create and Validate Task
+                            Task task = new Task(taskName, description, developerDetails, i, duration, taskStatus);
+                             if (task.checkTaskDescription()){
+                                 JOptionPane.showMessageDialog(null, task.printTaskDetails());
+                             }
+                        }
+                        break;
+                    case 2:
+                        
                     }
                 }         
         }else{
