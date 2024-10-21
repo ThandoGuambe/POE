@@ -123,9 +123,11 @@ public class POEPart1 {
                         JOptionPane.showMessageDialog(null, "Coming Soon");
                         break;
                     case 3:
-                        
-                        
-                        
+                        //Quit Application
+                        JOptionPane.showMessageDialog(null, "Total hours across all tasks: " + Task.returnTotalHours());
+                        running = false;
+                    default:
+                        JOptionPane.showMessageDialog(null,"Invalid Option. Try Again.");
                 }
             }  
         }else{
