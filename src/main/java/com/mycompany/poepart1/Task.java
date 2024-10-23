@@ -30,19 +30,19 @@ class Task {
         this.taskID = createTaskID();
     }
 
-    // Check if the task description is valid
+    // Check if the task description is valid.
     public boolean checkTaskDescription() {
         return this.description.length() <= 50;
     }
 
-    // Create Task ID
+    // Create Task ID.
     public String createTaskID() {
         String taskID = taskName.substring(0, 2).toUpperCase() + ":" + taskNum + ":" +
                 developerDetails.substring(developerDetails.length() - 3).toUpperCase();
         return taskID;
     }
 
-    // Print task details
+    // Print task details.
     public String printTaskDetails() {
         return "Task Status: " + taskStatus + "\n" +
                 "Developer Details: " + developerDetails + "\n" +
@@ -53,8 +53,9 @@ class Task {
                 "Task Duration: " + duration + " hours";
     }
 
-    // Return total hours
+    // Return the total amount of hours.
     public int returnTotalHours() {
         return duration;
+        
     }
 }
