@@ -16,7 +16,6 @@ public class POEPart1 {
     private static ArrayList<Task> tasks = new ArrayList<>();
     private static int totalTaskDuration = 0;
         
-
     public static void main(String[] args) {
               
         //Object for a Scanner

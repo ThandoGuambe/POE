@@ -55,7 +55,6 @@ class Task {
 
     // Return the total amount of hours.
     public int returnTotalHours() {
-        return duration;
-        
+        return duration;    
     }
 }

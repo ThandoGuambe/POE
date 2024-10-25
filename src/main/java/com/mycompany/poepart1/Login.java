@@ -55,14 +55,14 @@ class Login {
     }
     //Register the user
     public String registerUser(String username,String password, String name,String surname) {
-        this.name = name;
-        this.surname = surname;
         //check if username is valid
         if(!checkUsername(username)){
             return "Username is not correctly formatted.";
         } else if(!checkPasswordComplexity(password)){
             return "Password is not correctly formatted.";
         } else{
+            this.name = name;
+            this.surname = surname;
             this.username = username;
             this.password = password;
             return "User registered successfully!";
