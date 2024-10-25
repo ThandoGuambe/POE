@@ -16,17 +16,17 @@ public class TaskTest {
     // Test for Valid Task Description
     @Test
     public void testValidTaskDescription() {
-        System.out.println("checkTaskDescription");
+        System.out.println("Task successfully captured");
         Task task = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
-        assertTrue(task.checkTaskDescription(), "Description within 50 characters should be valid.");
+        assertTrue(task.checkTaskDescription(), "Task successfully captured");
     }
     
     // Test for Invalid Task Description
     @Test
     public void testInvalidTaskDescription() {
-        System.out.println("checkTaskDescription");
-        Task task = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
-        assertTrue(task.checkTaskDescription(), "Description within 50 characters should be valid.");
+        System.out.println("Please enter a task description of less than 50 characters.");
+        Task task = new Task("Login Feature", 1, "Create a Login feature that will be tasked to authenticate users.", "Robyn Harrison", 8, "To Do");
+        assertFalse(task.checkTaskDescription(), "Please enter a task description of less than 50 characters.");
     }
 
     /**
