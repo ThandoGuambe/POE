@@ -36,9 +36,14 @@ public class TaskTest {
     public void testCreateTaskID() {
         Task task = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
         assertEquals("LO:1:SON", task.createTaskID());
-     
     }
 
+    // Test for Task ID creation for test Data 2
+   @Test
+    public void testCreateTaskID2() {
+        Task task = new Task("Add Task Feature", 2, "Create add task feature to add task users", "Mike Smith", 10, "Doing");
+        assertEquals("AD:2:ITH", task.createTaskID());
+    }
     
     
     
