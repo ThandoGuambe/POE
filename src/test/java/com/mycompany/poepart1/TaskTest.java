@@ -59,5 +59,19 @@ public class TaskTest {
         assertEquals(expectedDetails, task.printTaskDetails());
     }
     
+    //Testing the printTaskDetails() method with Test Data 2
+    @Test
+    public void testPrintTask2Details() {
+        Task task = new Task("Add Task Feature", 2, "Create add task feature to add task users", "Mike Smith", 10, "Doing");
+        String expectedDetails = "Task Status: Doing\n" +
+                "Developer Details: Mike Smith\n" +
+                "Task Number: 2\n" +
+                "Task Name: Add Task Feature\n" +
+                "Task Description: Create add task feature to add task users\n" +
+                "Task ID: AD:2:ITH\n" +
+                "Task Duration: 10 hours";
+        assertEquals(expectedDetails, task.printTaskDetails());
+    }
+    
     
 }
