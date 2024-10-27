@@ -73,5 +73,15 @@ public class TaskTest {
         assertEquals(expectedDetails, task.printTaskDetails());
     }
     
+    // Test for total hours accumulated
+    @Test
+    void testReturnTotalHours() {
+        ArrayList<Task> tasks = new ArrayList<>();
+        tasks.add(new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To do"));
+        tasks.add(new Task("Add Task Feature", 2, "Create add task feature to add task users", "Mike Smith", 10, "Doing"));
+        int totalHours = tasks.stream().mapToInt(Task::returnTotalHours).sum();
+        assertEquals(18, totalHours, "Total hours aacumulated is 18.");
+        }
+    
     
 }
