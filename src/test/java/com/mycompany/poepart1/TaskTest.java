@@ -4,6 +4,7 @@
  */
 package com.mycompany.poepart1;
 
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author RC_Student_lab
  */
 public class TaskTest {
+    
     
     // Test for Valid Task Description
     @Test
@@ -29,46 +31,15 @@ public class TaskTest {
         assertFalse(task.checkTaskDescription(), "Please enter a task description of less than 50 characters.");
     }
 
-    /**
-     * Test of createTaskID method, of class Task.
-     */
-    @Test
+    // Test for Task ID creation for test Data 1.
+   @Test
     public void testCreateTaskID() {
-        System.out.println("createTaskID");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.createTaskID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Task task = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
+        assertEquals("LO:1:SON", task.createTaskID());
+     
     }
 
-    /**
-     * Test of printTaskDetails method, of class Task.
-     */
-    @Test
-    public void testPrintTaskDetails() {
-        System.out.println("printTaskDetails");
-        Task instance = null;
-        String expResult = "";
-        String result = instance.printTaskDetails();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of returnTotalHours method, of class Task.
-     */
-    @Test
-    public void testReturnTotalHours() {
-        System.out.println("returnTotalHours");
-        Task instance = null;
-        int expResult = 0;
-        int result = instance.returnTotalHours();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
+    
     
 }
