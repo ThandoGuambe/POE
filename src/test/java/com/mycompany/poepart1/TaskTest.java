@@ -45,6 +45,19 @@ public class TaskTest {
         assertEquals("AD:2:ITH", task.createTaskID());
     }
     
+    //Testing the printTaskDetails() method with Test Data 1
+    @Test
+    public void testPrintTask1Details() {
+        Task task = new Task("Login Feature", 1, "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
+        String expectedDetails = "Task Status: To Do\n" +
+                "Developer Details: Robyn Harrison\n" +
+                "Task Number: 1\n" +
+                "Task Name: Login Feature\n" +
+                "Task Description: Create Login to authenticate users\n" +
+                "Task ID: LO:1:SON\n" +
+                "Task Duration: 8 hours";
+        assertEquals(expectedDetails, task.printTaskDetails());
+    }
     
     
 }
