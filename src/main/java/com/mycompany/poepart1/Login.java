@@ -17,7 +17,7 @@ class Login {
     private String username;
     private String password;
     
-    //Checking username validity
+    //Validate the format and requirements of the username, that being the username be no longer than 5 characters long and contains an underscore.
     public boolean checkUsername(String username) {
         boolean Found = false;
         if(username.contains("_") && username.length() <=5){
@@ -32,33 +32,37 @@ class Login {
             return false;
         }
     }
-    //Checking password complexity
+    //Verify the complexity of the password based on a set of criteria (At least 8 charcters long, with captial letter, number and special character)
     public boolean checkPasswordComplexity(String password){
-     //Pattern regex
+     //Define Regular expression pattern for validation
      Pattern check_num = Pattern.compile("[0123456789]");
      Pattern check_uppercase = Pattern.compile("[QWERTYUIOPLKJHGFDSAZXCVBNM]");
      Pattern check_specials = Pattern.compile("[!@#$%^&*+-_:.<,>~']");
      
+     //Declare and assign a temporary variable to false.
      boolean Found = false;
-     //Check all 
+     
      if(check_num.matcher(password).find() && (check_specials.matcher(password).find()) && (check_uppercase.matcher(password).find())){
          Found = true;
          System.out.println("Password successfully captured.");
+         //Assign the temporary variable to true if the password is captured successfully.
          return true;
      }else{
+        //Assign the temporary variable to false if the password is not captured successfully.
          Found = false;
          System.out.println("Password is not correctly formatted, please "
                  + "ensure that the password contains at least 8 characters, a "
                  + "capital letter, a number and a special character.");
-         return false;
+         return Found;
      }
     }
-    //Register the user
+    //Register a user new user to the system
     public String registerUser(String username,String password, String name,String surname) {
-        //check if username is valid
+        //Confirm if the username meets the validation requirements
         if(!checkUsername(username)){
             return "Username is not correctly formatted.";
         } else if(!checkPasswordComplexity(password)){
+        //Confirm if the password meets the complexity requirements.
             return "Password is not correctly formatted.";
         } else{
             this.name = name;
@@ -68,13 +72,12 @@ class Login {
             return "User registered successfully!";
         }  
      }
-        // Verify login details
+        // Verify user login credentials
         public Boolean loginUser(String username, String password) {
         // Check if the entered username and password match the stored ones
         return this.username.equals(username) && this.password.equals(password);
         }
-        //Return login status
-        //Run JAVA JUnit Test of the following JAVA Code;
+        //Return the status of the login attempt.
         public String LoginStatus(String username, String password, String name, String surname) {
         if (loginUser(username, password)) {
             return "Welcome " + name + " " + surname + ", it is great to see you again.";

@@ -3,7 +3,6 @@
  */
 
 package com.mycompany.poepart1;
-import java.util.*;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
@@ -17,10 +16,7 @@ public class POEPart1 {
     private static int totalTaskDuration = 0;
         
     public static void main(String[] args) {
-              
-        //Object for a Scanner
-        Scanner input = new Scanner(System.in);
-        
+                    
        //Instance of a login class
        Login loginSystem = new Login();
         
@@ -39,12 +35,12 @@ public class POEPart1 {
        name = JOptionPane.showInputDialog("Enter First Name: ");
        surname = JOptionPane.showInputDialog("Enter Last Name: ");
        
-              //User registration
+       //User registration
         username = JOptionPane.showInputDialog("Register Account\nEnter Username: ");
        
         password = JOptionPane.showInputDialog("Enter Password: ");
        
-       //Register user
+       //Register a user new user in the system
        String registration = loginSystem.registerUser(username, password, name, surname);
        JOptionPane.showMessageDialog(null, registration);
        
@@ -75,7 +71,6 @@ public class POEPart1 {
                     "1) Add Tasks\n" +
                     "2) Show Report (Coming Soon)\n" +
                     "3) Quit");
-
                               
                 switch (option){
                     case "1":
@@ -95,16 +90,16 @@ public class POEPart1 {
                     }
                 }         
         }
-        input.close();
         JOptionPane.showMessageDialog(null, "__________________END______________________");
             }
     
+    //Task creation method
     private static void addTasks(){
         int numTasks = Integer.parseInt(JOptionPane.showInputDialog("How many tasks would you like to add?"));
         ArrayList<Task> taskList = new ArrayList<>();
         int totalHrs = 0;
 
-        for (int i = 0; i < numTasks; i++) {
+        for (int i = 1; i < numTasks; i++) {
             String taskName = JOptionPane.showInputDialog("Enter Task Name:");
             String description;
             do {
