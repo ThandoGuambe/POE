@@ -72,8 +72,7 @@ public class TaskTest {
                 "Task Duration: 10 hours";
         assertEquals(expectedDetails, task.printTaskDetails());
     }
-    
-    // Test for total hours accumulated
+    // Test for total hours accumulated.
     @Test
     void testReturnTotalHours() {
         ArrayList<Task> tasks = new ArrayList<>();

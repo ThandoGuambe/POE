@@ -11,7 +11,7 @@ import java.util.regex.*;
  * @author RC_Student_lab
  */
 class Login {
-    //Declaration
+    // Declare private variables to store user details
     private String name;
     private String surname;
     private String username;
